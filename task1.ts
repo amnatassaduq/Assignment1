@@ -1,7 +1,7 @@
 import inquirer from "inquirer"
 import chalk from "chalk"
 console.log("***************WELCOME***************") 
-// Scenario 1- "Buying Groceries"
+// "Buying Groceries"
 async function buyGroceries():Promise<number> {
  // Ask from coustomer if they want fruits or vegetable 
 var input = await inquirer.prompt([
@@ -13,7 +13,7 @@ var input = await inquirer.prompt([
                                   ])
 let bill =0
  if(input.choice==="fruit")
- {
+   {
     console.log(chalk.red("Available fruits are:\napple (RS100/kg)\nbanana (RS200/kg)\norange(Rs150)"))
 // Ask for the fruit choice and quantity for each item
 var fruitChoice = await inquirer.prompt([
@@ -30,18 +30,18 @@ var fruitChoice = await inquirer.prompt([
    if(fruitChoice.fruit==="apple")
    {
     bill+=100*fruitChoice.quantity
-   }
+    }
    else if(fruitChoice.fruit==="banana")
    {  
     bill+=200*fruitChoice.quantity
-   }
+    }
    else(fruitChoice.fruit==="orange") 
    {
     bill+=150*fruitChoice.quantity
-   }
- }
+    }
+  }
  if(input.choice==="vegetable")
- {
+  {
    {console.log("Availabe vegetables are :\n ptatoes    (RS 120/kg) \n ladyfinger (RS 160/kg) \n chilles      (RS 180/kg)")}
  var vegchoice=await inquirer.prompt([
                                     {name:"vegetable",
@@ -55,22 +55,22 @@ var fruitChoice = await inquirer.prompt([
                                     }
                                     ])
  if(vegchoice.vegetable==="ptatoes")
- {
+  {
   bill+=110*vegchoice.quantity
- }
+  }
  else if(vegchoice.vegetable==="ladyfinger")
- {
+  {
   bill+=160*vegchoice.quantity
- }
+  }
  else(vegchoice.vegetable==="chilles")
- { 
+  { 
   bill+=180*vegchoice.quantity
+  }
  }
-}
 return bill
 }
 
-    //Scenerio 2 -Checking Discounts
+    //Checking Discounts
 function discount (bill:number)
 {
    //if bill is above then RS300 apply the discount
@@ -89,7 +89,7 @@ else
   }
 }
 
- //Scenerio 3 -Checkout Process
+ // Checkout Process
  async function checkoutProcess()
 {
   console.log("Welcome to the checkoutprocess")
@@ -108,8 +108,8 @@ else
   else
   {
    console.log("Invalid mathod ")
+    }
   }
- }
  console.log(`You have choosen ${paymentMethod.choice1} as your payment method`)
  console.log("Payment sucessfull")
  console.log("Thanks for chossing us")
